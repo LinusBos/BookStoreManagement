@@ -6,12 +6,23 @@ public class Product {
     private String title;
     private double price;
     private String releaseDate;
-    public Product(String title, double price, String releaseDate) {
+    private int quantity;
+    public Product(String title, double price, String releaseDate, int quantity) {
         this.title = title;
         this.price = price;
         this.releaseDate = releaseDate;
     }
+    public void increaseQuantity(int amount) {
+        quantity += amount;
+    }
+    public void decreaseQuantity(int amount) {
+        if(quantity >= amount){
+            quantity -= amount;
+        } else {
+            quantity = 0;
+        }
 
+    }
     public String getTitle() {
         return title;
     }
@@ -34,5 +45,13 @@ public class Product {
 
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

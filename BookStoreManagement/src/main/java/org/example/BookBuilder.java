@@ -8,6 +8,7 @@ public class BookBuilder implements ProductBuilder {
     private double price = 0;
     private String releaseDate = "";
     private ArrayList<Author> authors = new ArrayList<>();
+    private int quantity = 0;
 
 
     @Override
@@ -25,12 +26,19 @@ public class BookBuilder implements ProductBuilder {
         this.releaseDate = releaseDate;
         return this;
     }
+
+    @Override
+    public ProductBuilder setQuantity(int quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+
     public BookBuilder setAuthorList(ArrayList<Author> authors) {
         this.authors = authors;
         return this;
     }
     @Override
     public Product build() {
-        return new Book(title, price, releaseDate, authors);
+        return new Book(title, price, releaseDate, authors, quantity);
     }
 }

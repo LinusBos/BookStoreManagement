@@ -6,14 +6,16 @@ public class User {
     private String lastName;
     private String password;
     private String phoneNumber;
+    private String userName;
     private double salary;
 
-    public User(String firstName, String lastName, String password, String phoneNumber, double salary) {
+    public User(String firstName, String lastName, String password, String phoneNumber, double salary, String userName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.salary = salary;
+        this.userName = userName;
     }
     public String getFirstName() {
         return firstName;
@@ -55,5 +57,11 @@ public class User {
         this.salary = salary;
     }
 
+    public String getUserName() {
+        return userName;
+    }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 }

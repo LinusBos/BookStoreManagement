@@ -11,6 +11,10 @@ public class MainForm extends JFrame {
     private JPanel bottomPanel;
     private JButton loginButton;
     private JButton registerButton;
+    private JTextField usernameTextField;
+    private JPasswordField passwordField;
+    private JLabel usernameLabel;
+    private JLabel passwordLabel;
     private JFrame jFrame;
 
     public MainForm() {
@@ -24,6 +28,7 @@ public class MainForm extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
 
             }
         });
