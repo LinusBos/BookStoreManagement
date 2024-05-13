@@ -1,7 +1,10 @@
 package org.example;
 
+import org.example.UI.MainForm;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MainForm mainForm = new MainForm();
+
     }
 }
