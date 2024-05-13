@@ -5,8 +5,8 @@ import java.util.Date;
 public class Product {
     private String title;
     private double price;
-    private Date releaseDate;
-    public Product(String title, double price, Date releaseDate) {
+    private String releaseDate;
+    public Product(String title, double price, String releaseDate) {
         this.title = title;
         this.price = price;
         this.releaseDate = releaseDate;
@@ -28,11 +28,11 @@ public class Product {
         this.price = price;
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 }

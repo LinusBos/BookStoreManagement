@@ -6,7 +6,7 @@ import java.util.Date;
 public class Book extends Product{
 
     private ArrayList<Author> authors;
-    public Book(String title, double price, Date releaseDate, ArrayList<Author> authors) {
+    public Book(String title, double price, String releaseDate, ArrayList<Author> authors) {
         super(title, price, releaseDate);
         this.authors = authors;
     }
