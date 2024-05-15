@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public class BookBuilder implements ProductBuilder {
     private String title = "";
-    private double price = 0;
+    private double sellPrice = 0;
+    private double purchasePrice = 0;
     private String releaseDate = "";
     private ArrayList<Author> authors = new ArrayList<>();
     private int quantity = 0;
@@ -16,11 +17,19 @@ public class BookBuilder implements ProductBuilder {
         this.title = title;
         return this;
     }
+
     @Override
-    public ProductBuilder setPrice(double price) {
-        this.price = price;
+    public ProductBuilder setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
         return this;
     }
+
+    @Override
+    public ProductBuilder setSellPrice(double sellPrice) {
+        this.sellPrice = sellPrice;
+        return null;
+    }
+
     @Override
     public ProductBuilder setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
@@ -39,6 +48,6 @@ public class BookBuilder implements ProductBuilder {
     }
     @Override
     public Product build() {
-        return new Book(title, price, releaseDate, authors, quantity);
+        return new Book(title, sellPrice, purchasePrice, releaseDate, authors, quantity);
     }
 }

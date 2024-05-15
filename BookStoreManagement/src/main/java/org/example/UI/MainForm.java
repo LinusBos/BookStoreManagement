@@ -24,7 +24,7 @@ public class MainForm extends JFrame {
         jFrame.setSize(400,400);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setVisible(true);
+        showWindow(true);
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,8 +35,12 @@ public class MainForm extends JFrame {
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                RegisterForm registerForm = new RegisterForm();
+                registerForm.showWindow(true);
             }
         });
+    }
+    public void showWindow(boolean show){
+        jFrame.setVisible(show);
     }
 }

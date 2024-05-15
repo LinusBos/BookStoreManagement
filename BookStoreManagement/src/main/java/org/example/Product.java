@@ -4,13 +4,16 @@ import java.util.Date;
 
 public class Product {
     private String title;
-    private double price;
+    private double salePrice;
+    private double purchasePrice;
     private String releaseDate;
     private int quantity;
-    public Product(String title, double price, String releaseDate, int quantity) {
+    public Product(String title, double salePrice, double purchasePrice, String releaseDate, int quantity) {
         this.title = title;
-        this.price = price;
+        this.salePrice = salePrice;
+        this.purchasePrice = purchasePrice;
         this.releaseDate = releaseDate;
+        this.quantity = quantity;
     }
     public void increaseQuantity(int amount) {
         quantity += amount;
@@ -27,16 +30,24 @@ public class Product {
         return title;
     }
 
+    public double getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(double salePrice) {
+        this.salePrice = salePrice;
+    }
+
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
+
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getReleaseDate() {

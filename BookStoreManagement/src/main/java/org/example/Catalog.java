@@ -5,5 +5,6 @@ import java.util.ArrayList;
 public interface Catalog {
 
 
-    ArrayList<Product> searchProduct();
+    ArrayList<Product> searchProduct(String title);
+    ArrayList<Product> getProducts();
 }
