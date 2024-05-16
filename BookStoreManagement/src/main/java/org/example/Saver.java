@@ -2,6 +2,8 @@ package org.example;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,11 +14,37 @@ public class Saver implements DataWriter{
     @Override
     public void saveProducts(ArrayList<Product> products) {
         File file = new File("src/main/resources/books.json");
-        if(file.exists()){
-
+        if (file.exists()) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String json = gson.toJson(products);
 
+            // Create a list to hold the JSON representations of books
+            ArrayList<JsonObject> bookJsonObjects = new ArrayList<>();
+
+            for (Product product : products) {
+                // Check if the product is an instance of Book
+                if (product instanceof Book) {
+                    Book book = (Book) product;
+                    JsonObject bookJsonObject = new JsonObject();
+                    bookJsonObject.addProperty("title", book.getTitle());
+                    bookJsonObject.addProperty("sellPrice", book.getSellPrice());
+                    bookJsonObject.addProperty("purchasePrice", book.getPurchasePrice());
+                    bookJsonObject.addProperty("releaseDate", book.getReleaseDate());
+                    JsonArray authorsArray = new JsonArray();
+                    for (Author author : book.getAuthors()) {
+                        JsonObject authorObject = new JsonObject();
+                        authorObject.addProperty("firstName", author.getFirstName());
+                        authorObject.addProperty("middleName", author.getMiddleName());
+                        authorObject.addProperty("lastName", author.getLastName());
+                        authorsArray.add(authorObject);
+                    }
+                    bookJsonObject.add("authors", authorsArray);
+                    bookJsonObject.addProperty("quantity", book.getQuantity());
+
+                    bookJsonObjects.add(bookJsonObject);
+                }
+            }
+
+            String json = gson.toJson(bookJsonObjects);
 
             try (FileWriter writer = new FileWriter(file)) {
                 writer.write(json);
@@ -31,7 +59,7 @@ public class Saver implements DataWriter{
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                System.out.println("Something went wrong creating books.json");;
+                System.out.println("Something went wrong creating books.json");
             }
         }
 
@@ -52,7 +80,6 @@ public class Saver implements DataWriter{
             } catch (IOException e) {
                 System.out.println("Error writing to the file: " + e.getMessage());
             }
-
         } else {
             // No file found.
             System.out.println("No file found, creating new.");

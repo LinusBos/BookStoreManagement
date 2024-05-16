@@ -48,11 +48,11 @@ public class UserBuilder implements AccountBuilder {
 
     @Override
     public User build() {
-        return new User(firstName, lastName, password, phoneNumber, salary, username);
+        return new User(firstName, lastName, password, phoneNumber, salary, username, false);
     }
 
     @Override
     public User buildAdmin() {
-        return new Admin(firstName, lastName, password, phoneNumber, salary, username);
+        return new User(firstName, lastName, password, phoneNumber, salary, username, true);
     }
 }

@@ -19,12 +19,7 @@ public class StoreRunner {
     }
     public void run() {
         RegisterForm registerForm = new RegisterForm(accountManager);
-        MainForm mainForm = new MainForm(registerForm);
-        while (mainForm.isActive()) {
-            // do nothing
-        }
-        exiting();
-
+        MainForm mainForm = new MainForm(registerForm, this);
     }
     private void setup() {
         Loader loader = new Loader();
@@ -46,7 +41,8 @@ public class StoreRunner {
         //store = new Store();
         shoppingCart = new ShoppingCart();
     }
-    private void exiting() {
+    public void exiting() {
+        System.out.println("here now");
         for (User user: accountManager.getUsers()){
             System.out.println("First name: " + user.getFirstName());
             System.out.println("-----");
@@ -56,4 +52,7 @@ public class StoreRunner {
         saver.saveUsers(accountManager.getUsers());
     }
 
+    public AccountManager getAccountManager() {
+        return accountManager;
+    }
 }

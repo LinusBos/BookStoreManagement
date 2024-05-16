@@ -6,6 +6,5 @@ public class Main {
     public static void main(String[] args) {
         StoreRunner storeRunner = new StoreRunner();
         storeRunner.run();
-
     }
 }

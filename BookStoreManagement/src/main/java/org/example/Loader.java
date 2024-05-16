@@ -18,14 +18,16 @@ public class Loader implements DataReader {
             FileReader reader = new FileReader(filePath);
 
             // Create a Type object representing the ArrayList of Product objects
-            Type bookListType = new TypeToken<ArrayList<Product>>(){}.getType();
+            Type bookListType = new TypeToken<ArrayList<Book>>(){}.getType();
 
             // Deserialize JSON data into ArrayList of Product objects using Gson
             Gson gson = new Gson();
-            products = gson.fromJson(reader, bookListType);
+            ArrayList<Book> books = gson.fromJson(reader, bookListType);
 
             // Close the reader
             reader.close();
+
+            products = new ArrayList<>(books);
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
         } catch (Exception e) {

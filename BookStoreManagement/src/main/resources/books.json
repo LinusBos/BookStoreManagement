@@ -1,1 +1,282 @@
-null
+[
+  {
+    "title": "The Great Gatsby",
+    "sellPrice": 15.99,
+    "purchasePrice": 10.5,
+    "releaseDate": "1925-04-10",
+    "authors": [
+      {
+        "firstName": "F. Scott",
+        "middleName": "",
+        "lastName": "Fitzgerald"
+      }
+    ],
+    "quantity": 100
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "sellPrice": 12.5,
+    "purchasePrice": 8.75,
+    "releaseDate": "1960-07-11",
+    "authors": [
+      {
+        "firstName": "Harper",
+        "middleName": "",
+        "lastName": "Lee"
+      }
+    ],
+    "quantity": 150
+  },
+  {
+    "title": "1984",
+    "sellPrice": 14.25,
+    "purchasePrice": 9.99,
+    "releaseDate": "1949-06-08",
+    "authors": [
+      {
+        "firstName": "George",
+        "middleName": "",
+        "lastName": "Orwell"
+      }
+    ],
+    "quantity": 120
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "sellPrice": 11.75,
+    "purchasePrice": 7.85,
+    "releaseDate": "1951-07-16",
+    "authors": [
+      {
+        "firstName": "J.D.",
+        "middleName": "",
+        "lastName": "Salinger"
+      }
+    ],
+    "quantity": 90
+  },
+  {
+    "title": "Pride and Prejudice",
+    "sellPrice": 13.99,
+    "purchasePrice": 10.25,
+    "releaseDate": "1813-01-28",
+    "authors": [
+      {
+        "firstName": "Jane",
+        "middleName": "",
+        "lastName": "Austen"
+      }
+    ],
+    "quantity": 110
+  },
+  {
+    "title": "Harry Potter and the Philosopher\u0027s Stone",
+    "sellPrice": 17.5,
+    "purchasePrice": 12.75,
+    "releaseDate": "1997-06-26",
+    "authors": [
+      {
+        "firstName": "J.K.",
+        "middleName": "",
+        "lastName": "Rowling"
+      }
+    ],
+    "quantity": 200
+  },
+  {
+    "title": "The Hobbit",
+    "sellPrice": 16.25,
+    "purchasePrice": 11.99,
+    "releaseDate": "1937-09-21",
+    "authors": [
+      {
+        "firstName": "J.R.R.",
+        "middleName": "",
+        "lastName": "Tolkien"
+      }
+    ],
+    "quantity": 180
+  },
+  {
+    "title": "The Lord of the Rings",
+    "sellPrice": 25.99,
+    "purchasePrice": 18.5,
+    "releaseDate": "1954-07-29",
+    "authors": [
+      {
+        "firstName": "J.R.R.",
+        "middleName": "",
+        "lastName": "Tolkien"
+      }
+    ],
+    "quantity": 150
+  },
+  {
+    "title": "Moby-Dick",
+    "sellPrice": 18.75,
+    "purchasePrice": 13.25,
+    "releaseDate": "1851-10-18",
+    "authors": [
+      {
+        "firstName": "Herman",
+        "middleName": "",
+        "lastName": "Melville"
+      }
+    ],
+    "quantity": 100
+  },
+  {
+    "title": "The Odyssey",
+    "sellPrice": 14.99,
+    "purchasePrice": 9.99,
+    "releaseDate": "8th century BC",
+    "authors": [
+      {
+        "firstName": "Homer",
+        "middleName": "",
+        "lastName": ""
+      }
+    ],
+    "quantity": 80
+  },
+  {
+    "title": "The Adventures of Huckleberry Finn",
+    "sellPrice": 13.25,
+    "purchasePrice": 8.5,
+    "releaseDate": "1884-12-10",
+    "authors": [
+      {
+        "firstName": "Mark",
+        "middleName": "",
+        "lastName": "Twain"
+      }
+    ],
+    "quantity": 120
+  },
+  {
+    "title": "Frankenstein",
+    "sellPrice": 11.99,
+    "purchasePrice": 7.25,
+    "releaseDate": "1818-01-01",
+    "authors": [
+      {
+        "firstName": "Mary",
+        "middleName": "",
+        "lastName": "Shelley"
+      }
+    ],
+    "quantity": 85
+  },
+  {
+    "title": "Alice\u0027s Adventures in Wonderland",
+    "sellPrice": 10.5,
+    "purchasePrice": 6.75,
+    "releaseDate": "1865-11-26",
+    "authors": [
+      {
+        "firstName": "Lewis",
+        "middleName": "",
+        "lastName": "Carroll"
+      }
+    ],
+    "quantity": 95
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "sellPrice": 12.99,
+    "purchasePrice": 9.25,
+    "releaseDate": "1890-07-20",
+    "authors": [
+      {
+        "firstName": "Oscar",
+        "middleName": "",
+        "lastName": "Wilde"
+      }
+    ],
+    "quantity": 110
+  },
+  {
+    "title": "Brave New World",
+    "sellPrice": 14.75,
+    "purchasePrice": 10.99,
+    "releaseDate": "1932-06-13",
+    "authors": [
+      {
+        "firstName": "Aldous",
+        "middleName": "",
+        "lastName": "Huxley"
+      }
+    ],
+    "quantity": 130
+  },
+  {
+    "title": "The Sun Also Rises",
+    "sellPrice": 11.5,
+    "purchasePrice": 8.25,
+    "releaseDate": "1926-10-22",
+    "authors": [
+      {
+        "firstName": "Ernest",
+        "middleName": "",
+        "lastName": "Hemingway"
+      }
+    ],
+    "quantity": 90
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "sellPrice": 16.99,
+    "purchasePrice": 12.5,
+    "releaseDate": "1967-05-30",
+    "authors": [
+      {
+        "firstName": "Gabriel",
+        "middleName": "",
+        "lastName": "García Márquez"
+      }
+    ],
+    "quantity": 140
+  },
+  {
+    "title": "The Grapes of Wrath",
+    "sellPrice": 13.99,
+    "purchasePrice": 10.25,
+    "releaseDate": "1939-04-14",
+    "authors": [
+      {
+        "firstName": "John",
+        "middleName": "",
+        "lastName": "Steinbeck"
+      }
+    ],
+    "quantity": 120
+  },
+  {
+    "title": "Catch-22",
+    "sellPrice": 12.25,
+    "purchasePrice": 8.99,
+    "releaseDate": "1961-10-10",
+    "authors": [
+      {
+        "firstName": "Joseph",
+        "middleName": "",
+        "lastName": "Heller"
+      }
+    ],
+    "quantity": 110
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "sellPrice": 14.5,
+    "purchasePrice": 9.75,
+    "releaseDate": "1844-08-28",
+    "authors": [
+      {
+        "firstName": "Alexandre",
+        "middleName": "",
+        "lastName": "Dumas"
+      }
+    ],
+    "quantity": 100
+  }
+]

@@ -46,7 +46,7 @@ public class RegisterForm extends JFrame {
                         String password = new String(passwordField.getPassword());
                         String username = userNameField.getText();
                         UserBuilder userBuilder = new UserBuilder();
-                        if(adminCheckBox.isBorderPainted()) {
+                        if(adminCheckBox.isSelected()) {
                             accountManager.addUser(
                                     userBuilder
                                             .setFirstName(firstName)

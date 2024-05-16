@@ -1,16 +1,13 @@
 package org.example;
-
-import java.util.Date;
-
 public class Product {
     private String title;
-    private double salePrice;
+    private double sellPrice;
     private double purchasePrice;
     private String releaseDate;
     private int quantity;
-    public Product(String title, double salePrice, double purchasePrice, String releaseDate, int quantity) {
+    public Product(String title, double sellPrice, double purchasePrice, String releaseDate, int quantity) {
         this.title = title;
-        this.salePrice = salePrice;
+        this.sellPrice = sellPrice;
         this.purchasePrice = purchasePrice;
         this.releaseDate = releaseDate;
         this.quantity = quantity;
@@ -30,12 +27,12 @@ public class Product {
         return title;
     }
 
-    public double getSalePrice() {
-        return salePrice;
+    public double getSellPrice() {
+        return sellPrice;
     }
 
-    public void setSalePrice(double salePrice) {
-        this.salePrice = salePrice;
+    public void setSellPrice(double sellPrice) {
+        this.sellPrice = sellPrice;
     }
 
     public double getPurchasePrice() {

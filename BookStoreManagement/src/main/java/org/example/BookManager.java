@@ -8,9 +8,9 @@ public class BookManager implements ProductManager{
     }
 
     @Override
-    public boolean changeSalePrice(Product product, double salePrice) {
-        if (salePrice >= 0) {
-            product.setSalePrice(salePrice);
+    public boolean changeSellPrice(Product product, double sellPrice) {
+        if (sellPrice >= 0) {
+            product.setSellPrice(sellPrice);
             return true;
         } else {
             return false;

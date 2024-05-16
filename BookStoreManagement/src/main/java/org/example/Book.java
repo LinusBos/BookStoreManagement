@@ -15,4 +15,5 @@ public class Book extends Product{
     public void setAuthors(ArrayList<Author> authors) {
         this.authors = authors;
     }
+
 }

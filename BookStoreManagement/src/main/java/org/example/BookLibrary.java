@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class BookLibrary implements Catalog {
     private ArrayList<Product> bookList;
-    private ShoppingCart shoppingCart;
 
     public BookLibrary(ArrayList<Product> bookList) {
         this.bookList = bookList;
@@ -16,7 +15,7 @@ public class BookLibrary implements Catalog {
 
     @Override
     public ArrayList<Product> getProducts() {
-        return null;
+        return bookList;
     }
 
     @Override
