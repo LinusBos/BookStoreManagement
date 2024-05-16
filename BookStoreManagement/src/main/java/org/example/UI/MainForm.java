@@ -3,6 +3,8 @@ package org.example.UI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainForm extends JFrame {
     private JPanel mainPanel;
@@ -16,8 +18,10 @@ public class MainForm extends JFrame {
     private JLabel usernameLabel;
     private JLabel passwordLabel;
     private JFrame jFrame;
+    private RegisterForm registerForm;
 
-    public MainForm() {
+    public MainForm(RegisterForm registerForm) {
+        this.registerForm = registerForm;
         jFrame = new JFrame();
         jFrame.setContentPane(mainPanel);
         jFrame.pack();
@@ -29,14 +33,13 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
             }
         });
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RegisterForm registerForm = new RegisterForm();
                 registerForm.showWindow(true);
+
             }
         });
     }

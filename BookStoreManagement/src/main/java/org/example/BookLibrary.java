@@ -3,10 +3,10 @@ package org.example;
 import java.util.ArrayList;
 
 public class BookLibrary implements Catalog {
-    private ArrayList<Book> bookList;
+    private ArrayList<Product> bookList;
     private ShoppingCart shoppingCart;
 
-    public BookLibrary(ArrayList<Book> bookList) {
+    public BookLibrary(ArrayList<Product> bookList) {
         this.bookList = bookList;
     }
     @Override
@@ -18,4 +18,10 @@ public class BookLibrary implements Catalog {
     public ArrayList<Product> getProducts() {
         return null;
     }
+
+    @Override
+    public void addProduct(Product product) {
+        bookList.add(product);
+    }
+
 }

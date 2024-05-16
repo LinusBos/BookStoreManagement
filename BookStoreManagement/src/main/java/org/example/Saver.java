@@ -38,10 +38,21 @@ public class Saver implements DataWriter{
     }
 
     @Override
-    public void saveUsers(ArrayList<User> user) {
+    public void saveUsers(ArrayList<User> users) {
         File file = new File("src/main/resources/users.json");
         if(file.exists()){
-            // File exists
+
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(users);
+
+
+            try (FileWriter writer = new FileWriter(file)) {
+                writer.write(json);
+                System.out.println("Data written to the file successfully.");
+            } catch (IOException e) {
+                System.out.println("Error writing to the file: " + e.getMessage());
+            }
+
         } else {
             // No file found.
             System.out.println("No file found, creating new.");
@@ -51,6 +62,6 @@ public class Saver implements DataWriter{
                 System.out.println("Something went wrong creating users.json");;
             }
         }
-
     }
+
 }

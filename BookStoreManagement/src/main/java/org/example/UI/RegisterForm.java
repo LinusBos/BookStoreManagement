@@ -1,5 +1,6 @@
 package org.example.UI;
 
+import org.example.AccountManager;
 import org.example.UserBuilder;
 
 import javax.swing.*;
@@ -23,8 +24,9 @@ public class RegisterForm extends JFrame {
     private JButton registerButton;
     private JCheckBox adminCheckBox;
     private JFrame jFrame;
+    private AccountManager accountManager;
 
-    public RegisterForm() {
+    public RegisterForm(AccountManager accountManager) {
         jFrame = new JFrame();
         jFrame.setContentPane(mainPanel);
         jFrame.pack();
@@ -32,33 +34,63 @@ public class RegisterForm extends JFrame {
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String firstName = firstNameField.getText();
-                    String lastName = lastNameField.getText();
-                    String phoneNumber = phoneNumberField.getText();
-                    String password = new String(passwordField.getPassword());
-                    String username = userNameField.getText();
-                    UserBuilder userBuilder = new UserBuilder();
-                    if(adminCheckBox.isBorderPainted()) {
-                        userBuilder.setFirstName(firstName).setLastName(lastName).setPassword(password).setUsername(username).setPhoneNumber(phoneNumber).buildAdmin();
-                    }else {
-                        userBuilder.setFirstName(firstName).setLastName(lastName).setPassword(password).setUsername(username).setPhoneNumber(phoneNumber).build();
+                    if(checkInputs()) {
+                        String firstName = firstNameField.getText();
+                        String lastName = lastNameField.getText();
+                        String phoneNumber = phoneNumberField.getText();
+                        String password = new String(passwordField.getPassword());
+                        String username = userNameField.getText();
+                        UserBuilder userBuilder = new UserBuilder();
+                        if(adminCheckBox.isBorderPainted()) {
+                            accountManager.addUser(
+                                    userBuilder
+                                            .setFirstName(firstName)
+                                            .setLastName(lastName)
+                                            .setPassword(password)
+                                            .setUsername(username)
+                                            .setPhoneNumber(phoneNumber)
+                                            .buildAdmin());
+
+                        }else {
+                            accountManager.addUser(
+                                    userBuilder
+                                            .setFirstName(firstName)
+                                            .setLastName(lastName)
+                                            .setPassword(password)
+                                            .setUsername(username)
+                                            .setPhoneNumber(phoneNumber)
+                                            .build());
+                        }
+                        JOptionPane.showMessageDialog(jFrame,
+                                "Your account has been created","Account creation", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(jFrame,
+                                "You didn't fill out all the information needed!", "Oops!", JOptionPane.WARNING_MESSAGE);
                     }
                 } catch (Exception exception) {
-
+                    JOptionPane.showMessageDialog(jFrame,
+                            "Something went wrong!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-
-
-                JOptionPane.showMessageDialog(jFrame,
-                        "Your account has been created");
             }
         });
     }
 
     public void showWindow(boolean show) {
         jFrame.setVisible(show);
+    }
+
+    private boolean checkInputs() {
+        JTextField[] textFields = {firstNameField, lastNameField, phoneNumberField, userNameField};
+        for (JTextField textField: textFields) {
+            if(textField.getText().trim().isEmpty()) {
+                return false;
+            }
+        }
+        return !new String(passwordField.getPassword()).trim().isEmpty();
     }
 }
