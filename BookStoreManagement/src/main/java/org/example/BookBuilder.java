@@ -27,7 +27,7 @@ public class BookBuilder implements ProductBuilder {
     @Override
     public ProductBuilder setSellPrice(double sellPrice) {
         this.sellPrice = sellPrice;
-        return null;
+        return this;
     }
 
     @Override

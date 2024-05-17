@@ -10,12 +10,15 @@ import java.util.ArrayList;
 public class StoreRunner {
 
     private AccountManager accountManager;
-    private BookLibrary bookLibrary;
-    private BookManager bookManager;
-    private Store store;
-    private ShoppingCart shoppingCart;
+    private Catalog bookLibrary;
+    private ProductManager bookManager;
 
-    public StoreRunner() {
+    private DataReader loader;
+    private DataWriter saver;
+
+    public StoreRunner(DataReader loader, DataWriter saver) {
+       this.loader = loader;
+       this.saver = saver;
        setup();
     }
     public void run() {
@@ -23,7 +26,6 @@ public class StoreRunner {
         MainForm mainForm = new MainForm(registerForm, this, bookLibrary);
     }
     private void setup() {
-        Loader loader = new Loader();
         loader.readUsers();
         loader.readProducts();
         if (!(loader.getUsers() == null)) {
@@ -39,16 +41,8 @@ public class StoreRunner {
             bookLibrary = new BookLibrary(new ArrayList<>());
         }
 
-        //store = new Store();
-        shoppingCart = new ShoppingCart();
     }
     public void exiting() {
-        System.out.println("here now");
-        for (User user: accountManager.getUsers()){
-            System.out.println("First name: " + user.getFirstName());
-            System.out.println("-----");
-        }
-        Saver saver = new Saver();
         saver.saveProducts(bookLibrary.getProducts());
         saver.saveUsers(accountManager.getUsers());
     }

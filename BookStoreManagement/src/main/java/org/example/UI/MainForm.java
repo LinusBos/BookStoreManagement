@@ -23,7 +23,7 @@ public class MainForm extends JFrame {
     private boolean windowShowing = false;
     private StoreForm storeForm;
 
-    public MainForm(RegisterForm registerForm, StoreRunner storeRunner, BookLibrary bookLibrary) {
+    public MainForm(RegisterForm registerForm, StoreRunner storeRunner, Catalog bookLibrary) {
         this.registerForm = registerForm;
         jFrame = new JFrame();
         jFrame.setTitle("Book Store Manager");

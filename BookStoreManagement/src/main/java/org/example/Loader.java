@@ -57,11 +57,12 @@ public class Loader implements DataReader {
         }
 
     }
-
+    @Override
     public ArrayList<User> getUsers() {
         return users;
     }
 
+    @Override
     public ArrayList<Product> getProducts() {
         return products;
     }

@@ -10,7 +10,7 @@ public class BookLibrary implements Catalog {
     }
     @Override
     public ArrayList<Product> searchProduct(String title){
-        return null; // TODO
+        return null; // TODO not implemented yet
     }
 
     @Override
@@ -21,6 +21,19 @@ public class BookLibrary implements Catalog {
     @Override
     public void addProduct(Product product) {
         bookList.add(product);
+    }
+
+    @Override
+    public void removeProduct(Product product) {
+        bookList.remove(product);
+    }
+
+    @Override
+    public void updateProduct(Product oldProduct, Product newProduct) {
+        int index = bookList.indexOf(oldProduct);
+        if (index >= 0) {
+            bookList.set(index, newProduct);
+        }
     }
 
 

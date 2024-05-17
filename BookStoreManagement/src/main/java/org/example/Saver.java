@@ -48,7 +48,7 @@ public class Saver implements DataWriter{
 
             try (FileWriter writer = new FileWriter(file)) {
                 writer.write(json);
-                System.out.println("Data written to the file successfully.");
+                System.out.println("Products written to the file successfully.");
             } catch (IOException e) {
                 System.out.println("Error writing to the file: " + e.getMessage());
             }
@@ -76,7 +76,7 @@ public class Saver implements DataWriter{
 
             try (FileWriter writer = new FileWriter(file)) {
                 writer.write(json);
-                System.out.println("Data written to the file successfully.");
+                System.out.println("Users written to the file successfully.");
             } catch (IOException e) {
                 System.out.println("Error writing to the file: " + e.getMessage());
             }
