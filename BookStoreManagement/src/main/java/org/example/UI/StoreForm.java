@@ -1,10 +1,11 @@
 package org.example.UI;
 
-import org.example.User;
+import org.example.*;
 
 import javax.swing.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 public class StoreForm extends JFrame {
     private JTabbedPane tabbedPane;
@@ -18,9 +19,13 @@ public class StoreForm extends JFrame {
     private JTextArea textArea1;
     private JFrame jFrame;
     private User currentUser;
-    private String[] filterOptions = {" ","Price", "Popularity", "Alphabetic"};
-    public StoreForm(User currentUser) {
+    private String[] filterOptions = {" ","Price", "Quantity", "Alphabetic"};
+    private ArrayList<Product> bookList;
+    private BookSorter bookSorter;
+    public StoreForm(User currentUser, BookLibrary bookLibrary) {
         this.currentUser = currentUser;
+        this.bookList = bookLibrary.getProducts();
+        bookSorter = new BookSorter();
         jFrame = new JFrame();
         jFrame.setTitle("Book Store Manager");
         jFrame.setContentPane(mainPanel);
@@ -29,19 +34,20 @@ public class StoreForm extends JFrame {
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        if(!currentUser.isAdmin()){
+        if (!currentUser.isAdmin()) {
             tabbedPane.remove(adminPanel);
         }
         filterComboBox.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
-                if(filterComboBox.getSelectedItem().equals("Price")) {
-
+                if (filterComboBox.getSelectedItem().equals("Price")) {
+                    bookSorter.setFilterStrategy(new PriceFilter());
                 } else if (filterComboBox.getSelectedItem().equals("Popularity")){
 
                 } else {
-                    // Alphabetic
+                    bookSorter.setFilterStrategy(new AlphabeticFilter());
                 }
+                bookList = bookSorter.sortBooks(bookList);
             }
         });
     }

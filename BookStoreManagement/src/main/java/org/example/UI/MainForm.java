@@ -23,7 +23,7 @@ public class MainForm extends JFrame {
     private boolean windowShowing = false;
     private StoreForm storeForm;
 
-    public MainForm(RegisterForm registerForm, StoreRunner storeRunner) {
+    public MainForm(RegisterForm registerForm, StoreRunner storeRunner, BookLibrary bookLibrary) {
         this.registerForm = registerForm;
         jFrame = new JFrame();
         jFrame.setTitle("Book Store Manager");
@@ -40,7 +40,7 @@ public class MainForm extends JFrame {
                 if (JOptionPane.showConfirmDialog(jFrame,
                         "Are you sure you want to exit?", "Close Window?",
                         JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                     storeRunner.exiting();
                     System.exit(0);
                 }
@@ -55,7 +55,7 @@ public class MainForm extends JFrame {
                     if (loggedIn) {
                         JOptionPane.showMessageDialog(jFrame,
                                 "You have been logged in!", "Welcome!", JOptionPane.INFORMATION_MESSAGE);
-                        storeForm = new StoreForm(accountManager.getCurrentUser());
+                        storeForm = new StoreForm(accountManager.getCurrentUser(), bookLibrary);
                         storeForm.showWindow(true);
 
                     } else {
@@ -83,7 +83,7 @@ public class MainForm extends JFrame {
         jFrame.setVisible(show);
     }
     private boolean checkInputs() {
-        if(usernameTextField.getText().isEmpty() || new String(passwordField.getPassword()).isEmpty()) {
+        if (usernameTextField.getText().isEmpty() || new String(passwordField.getPassword()).isEmpty()) {
             return false;
         }
         else {

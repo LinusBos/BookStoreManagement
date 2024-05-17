@@ -20,7 +20,7 @@ public class AccountManager {
     public boolean login(String username, String password) {
         User temp = new UserBuilder().setUsername(username).setPassword(password).build();
         for (User user: users) {
-            if(user.equals(temp)) {
+            if (user.equals(temp)) {
                 currentUser = user;
                 return true;
             }

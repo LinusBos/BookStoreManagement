@@ -68,7 +68,7 @@ public class Saver implements DataWriter{
     @Override
     public void saveUsers(ArrayList<User> users) {
         File file = new File("src/main/resources/users.json");
-        if(file.exists()){
+        if (file.exists()) {
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String json = gson.toJson(users);

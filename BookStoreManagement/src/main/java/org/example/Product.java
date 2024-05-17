@@ -16,7 +16,7 @@ public class Product {
         quantity += amount;
     }
     public void decreaseQuantity(int amount) {
-        if(quantity >= amount){
+        if (quantity >= amount) {
             quantity -= amount;
         } else {
             quantity = 0;

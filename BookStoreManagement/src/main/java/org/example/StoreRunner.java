@@ -20,23 +20,23 @@ public class StoreRunner {
     }
     public void run() {
         RegisterForm registerForm = new RegisterForm(accountManager);
-        MainForm mainForm = new MainForm(registerForm, this);
+        MainForm mainForm = new MainForm(registerForm, this, bookLibrary);
     }
     private void setup() {
         Loader loader = new Loader();
         loader.readUsers();
         loader.readProducts();
-        if(!(loader.getUsers() == null)) {
+        if (!(loader.getUsers() == null)) {
             accountManager = new AccountManager(loader.getUsers());
         } else {
             accountManager = new AccountManager(new ArrayList<User>());
         }
 
         bookManager = new BookManager();
-        if(!(loader.getProducts() == null)) {
+        if (!(loader.getProducts() == null)) {
             bookLibrary = new BookLibrary(loader.getProducts());
         } else {
-            bookLibrary = new BookLibrary(new ArrayList<Product>());
+            bookLibrary = new BookLibrary(new ArrayList<>());
         }
 
         //store = new Store();
