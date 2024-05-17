@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 public class RegisterForm extends JFrame {
     private JPanel mainPanel;
-    private JLabel titleLabel;
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JTextField phoneNumberField;
@@ -28,6 +27,7 @@ public class RegisterForm extends JFrame {
 
     public RegisterForm(AccountManager accountManager) {
         jFrame = new JFrame();
+        jFrame.setTitle("Book Store Manager");
         jFrame.setContentPane(mainPanel);
         jFrame.pack();
         jFrame.setSize(400,400);

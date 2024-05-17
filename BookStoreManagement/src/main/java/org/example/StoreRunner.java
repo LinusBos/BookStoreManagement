@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.UI.MainForm;
 import org.example.UI.RegisterForm;
+import org.example.UI.StoreForm;
 
 import java.io.Writer;
 import java.util.ArrayList;

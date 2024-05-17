@@ -10,7 +10,6 @@ import java.awt.event.WindowEvent;
 
 public class MainForm extends JFrame {
     private JPanel mainPanel;
-    private JLabel titleLabel;
     private JPanel topPanel;
     private JPanel bottomPanel;
     private JButton loginButton;
@@ -22,10 +21,12 @@ public class MainForm extends JFrame {
     private JFrame jFrame;
     private RegisterForm registerForm;
     private boolean windowShowing = false;
+    private StoreForm storeForm;
 
     public MainForm(RegisterForm registerForm, StoreRunner storeRunner) {
         this.registerForm = registerForm;
         jFrame = new JFrame();
+        jFrame.setTitle("Book Store Manager");
         jFrame.setContentPane(mainPanel);
         jFrame.pack();
         jFrame.setSize(400,400);
@@ -54,6 +55,9 @@ public class MainForm extends JFrame {
                     if (loggedIn) {
                         JOptionPane.showMessageDialog(jFrame,
                                 "You have been logged in!", "Welcome!", JOptionPane.INFORMATION_MESSAGE);
+                        storeForm = new StoreForm(accountManager.getCurrentUser());
+                        storeForm.showWindow(true);
+
                     } else {
                         JOptionPane.showMessageDialog(jFrame,
                                 "Wrong combination of username and password.", "Oh no...", JOptionPane.WARNING_MESSAGE);
